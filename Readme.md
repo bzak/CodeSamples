@@ -1,0 +1,1 @@
+﻿Some code samples for recruitment purposes from my most recent project

@@ -1,0 +1,158 @@
+﻿@import "../Theme/variables.scss";
+@import "../Theme/mixins.scss";
+
+.lone-logo {
+    margin-top:40px;
+    margin-bottom:40px;    
+    @include center-block();
+    padding:0 20px;
+}
+
+.auth {
+    
+    .form-signin
+    {    
+        padding: $padding-large-vertical;
+        margin: 0 auto;
+        max-width: 340px;    
+
+        input {    
+            margin-bottom: 20px;    
+        }        
+    }
+
+    .account-wall
+    {
+        z-index:100;
+        @include center-block();
+        padding-top: $padding-large-vertical;    
+        padding-bottom: $padding-large-vertical;    
+        max-width: 400px;    
+        @include box-shadow(0px 20px 40px rgba(0, 0, 0, 0.1));                
+    }
+    .login-title
+    {
+        padding: 20px;
+        color: $gray-dark;
+        font-size: $font-size-h4;
+        line-height: $font-size-h4 * 1.5;
+        font-weight: 400;
+        margin-top:0;
+    }
+    .img-profile {
+        max-width:100px;
+    }
+    .back-btn {    
+        text-align:left;
+        display:block;
+        margin-bottom:-20px;
+        padding-left: 20px;
+        font-size:$font-size-h3;
+    }
+    .back-btn a {
+        color: $gray-light;
+    }
+    .back-btn a:hover {
+        color:$brand-primary;
+    }
+    label.checkbox {
+        margin-left:20px;
+        font-weight:400;
+        cursor:pointer;
+    }
+
+    .password-strength {
+        height:6px;
+        margin-bottom:0;
+        @include box-shadow(none);
+    }
+    .password-strength .progress-bar {
+        @include box-shadow(none);
+    }
+
+    .password-strength-label {
+        display:block;
+        margin-bottom:10px;
+    }    
+
+    
+
+    .help-block {
+        color:$gray-dark;
+    }
+
+    .has-error .help-block, .has-error.help-block {
+        color:$alert-danger-text;
+    }
+    
+    .prev-version {        
+        margin-top:70px;
+        font-size:20px;
+        text-align:center;
+        text-decoration:underline;
+        display:block;
+    }
+}
+
+.auth .sticky-footer, .minimal-sticky-footer {
+        position: absolute;
+        bottom: 0;
+        width: 100%;
+        height: 45px;
+        line-height:40px;        
+        z-index:-50;
+
+        padding-left:$padding-base-horizontal*3;
+        padding-right:$padding-base-horizontal*3;
+        font-size:$font-size-small;
+        border-top:$gray-lighter 1px solid;
+
+        a {
+            color:$gray-dark;
+            padding-right:$padding-base-horizontal;
+        }
+        
+        .pull-left {
+            div {
+                display:inline;
+            }
+        }
+
+    }
+
+input {
+    &:-webkit-autofill {
+    // Expose a hook for JavaScript when auto fill is shown.
+    // JavaScript can capture 'animationstart' events
+    animation-name: onAutoFillStart;
+
+    // Make the backgound color become yellow _really slowly_
+    transition: background-color 1s;
+  }
+
+  &:not(:-webkit-autofill) {
+    // Expose a hook for JS onAutoFillCancel
+    // JavaScript can capture 'animationstart' events
+    animation-name: onAutoFillCancel;
+  }
+}
+
+
+@media (max-width: $screen-xs-max) {
+    .auth {
+        .account-wall
+        {
+           @include box-shadow(none);
+            border:none;
+            width:100%;
+            max-width:none;            
+        }
+        .form-signin {
+            max-width:none;
+        }
+    }
+    .lone-logo {
+        margin-bottom:0px;
+        margin-top:20px;
+    }
+}
